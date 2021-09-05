@@ -3,6 +3,8 @@
 import Mascotte from '../components/Mascotte.astro';
 import Exemple from '../components/Exemple.astro';
 import Screenshot from '../components/Screenshot.astro';
+import IconPhone from '../components/IconPhone.astro';
+import IconMail from '../components/IconMail.astro';
 // You can import components from any supported Framework here!
 import VueCounter from '../components/VueCounter.vue';
 
@@ -29,7 +31,11 @@ let title = "Soklaki - Évaluation de l'acquisition du socle commun";
         <Mascotte class="h-8" />
       </div>
     <div class="font-bold text-pink-600 flex-grow">Soklaki</div>
-    <div class="flex-grow-0 px-2 text-pink-600">Contact</div>
+    <div class="flex-grow-0 px-2 text-pink-600">
+      <a href="#contact">
+        Contact
+      </a>
+    </div>
   </header>
   <main>
     <!-- hero -->
@@ -45,7 +51,7 @@ let title = "Soklaki - Évaluation de l'acquisition du socle commun";
         </div>
         <div class="mt-4">
           <span class="font-semibold text-lg">
-            Une application qui vous aide à générer des rapports à présenter à l'inspection
+            Une application web qui vous aide à générer des rapports à présenter à l'inspection
           </span>
         </div>
       </div>
@@ -196,9 +202,63 @@ let title = "Soklaki - Évaluation de l'acquisition du socle commun";
     <div class="py-10 px-2">
       <div class="text-pink-600 uppercase font-bold text-xl">Et en pratique ?</div>
       <div class="mt-6">
-        Au cours de l'année, toute l'équipe de l'école fait des 
-        <span class="font-bold text-pink-700">observations</span> 🧐
-        : de courtes descriptions associées à un·e/des élève/s et à une/des compétences du socle.
+        Pour commencer à utiliser soklaki, j'aurai besoin que vous me <a class="text-blue-500" href="#contact">communiquiez</a> :
+        <ul class="list-disc list-inside">
+          <li>
+            le nom de votre école
+          </li>
+          <li>
+            la liste de vos élèves (nom, prénom, date d'anniversaire, date d'entrée à l'école)
+            <span class="text-sm ml-2">
+              parce que commencer par remplir tout ça à la main, c'est pas très réjouissant !
+            </span>
+          </li>
+        </ul>
+      </div>
+      <div class="mt-2">
+        Et je vous enverrai un lien d'invitation vers l'outil !
+      </div>
+      <div class="mt-6">
+        Pour m'aider à payer les frais de serveurs, les crêpes qui me nourrissent et le temps que j'y passe,
+        je vous demandrai une participation financière.
+        Un prix juste pour moi serait 35€/mois ou 350€/an.
+      </div>
+      <div class="mt-6">
+        Soklaki est un logiciel libre, les sources sont disponibles sur
+        <a class="text-blue-500" href="https://github.com/kreako/soklaki">github</a>.
+      </div>
+      <div class="">
+        Si vous vous sentez l'âme technique, c'est donc possible d'héberger soklaki vous-mêmes.
+        (Les scripts ansible de déploiement sont disponibles dans le repository).
+      </div>
+    </div>
+    <div class="py-10 px-2 bg-pink-600 text-white">
+      <div class="uppercase font-bold text-lg" id="contact">Contact</div>
+      <div class="grid grid-cols-1 gap-y-12 mt-8">
+        <div class="mt-4">
+          <div class="flex items-center space-x-2">
+            <IconPhone/>
+            <p class="text-lg">
+              Par Téléphone :
+              <a class="font-bold text-teal-500" href="tel:+33698990069">
+                +33 6 98 99 00 69
+              </a>
+            </p>
+          </div>
+          <p>(Appel, sms, Telegram, Signal, Whatsapp...)</p>
+        </div>
+        <div class="mt-4">
+          <div class="flex items-center space-x-2">
+            <IconMail class="h-4 text-gray-700" />
+            <p class="text-lg">
+              Par mail :
+              <a class="font-bold text-teal-500" href="mailto:olivier@soklaki.fr">
+                olivier@soklaki.fr
+              </a>
+            </p>
+          </div>
+        </div>
+        <div class="mt-4">À tout bientôt ! 🤸</div>
       </div>
     </div>
   </main>
