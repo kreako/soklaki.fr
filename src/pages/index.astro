@@ -1,6 +1,8 @@
 ---
 // Component Imports
-import Tour from '../components/Tour.astro';
+import Mascotte from '../components/Mascotte.astro';
+import Exemple from '../components/Exemple.astro';
+import Screenshot from '../components/Screenshot.astro';
 // You can import components from any supported Framework here!
 import VueCounter from '../components/VueCounter.vue';
 
@@ -8,45 +10,197 @@ import VueCounter from '../components/VueCounter.vue';
 // You can write any JavaScript/TypeScript that you'd like here.
 // It will run during the build, but never in the browser.
 // All variables are available to use in the HTML template below.
-let title = 'My Astro Site';
+let title = "Soklaki - Évaluation de l'acquisition du socle commun";
 
 // Full Astro Component Syntax:
 // https://docs.astro.build/core-concepts/astro-components/
 ---
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
-    <title>{title}</title>
-
-        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    
-     <link
-    rel="stylesheet"
-    href={Astro.resolve("../styles/global.css")}
-  >
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>{title}</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="stylesheet" href={Astro.resolve("../styles/global.css")}>
 </head>
 <body>
-    <main>
-        <header>
-            <div>
-                <img width="60" height="80" src="/assets/logo.svg" alt="Astro logo">
-                <h1 class="text-red-600">Welcome to <a href="https://astro.build/">Astro</a></h1>
-            </div>
-        </header>
-
-        <Tour />
-
-        <!--
-           - You can also use imported framework components directly in your markup!
-           -
-           - Note: by default, these components are NOT interactive on the client.
-           - The `:visible` directive tells Astro to make it interactive.
-           -
-           - See https://docs.astro.build/core-concepts/component-hydration/ 
-           -->
-        <VueCounter client:visible />
-    </main>
+  <header class="flex flex-row items-center space-x-2 my-2">
+      <div class="flex-grow-0 rounded-full h-10 w-10 bg-white flex flex-row justify-center p-1">
+        <Mascotte class="h-8" />
+      </div>
+    <div class="font-bold text-pink-600 flex-grow">Soklaki</div>
+    <div class="flex-grow-0 px-2 text-pink-600">Contact</div>
+  </header>
+  <main>
+    <!-- hero -->
+    <div class="bg-pink-600 flex flex-col items-center">
+      <div class="text-white px-2 py-10">
+        <div>
+          <span class="font-extrabold text-2xl">
+            Une évaluation harmonieuse du socle commun
+          </span>
+          <!--span>
+            Enfin... le moins pénible possible...
+          </span-->
+        </div>
+        <div class="mt-4">
+          <span class="font-semibold text-lg">
+            Une application qui vous aide à générer des rapports à présenter à l'inspection
+          </span>
+        </div>
+      </div>
+      <div class="w-4/5 pb-10">
+        <img class="rounded-md shadow-xl" src="/screenshots/stats-student-hero.png" alt="Statistiques sur la progression de l'évaluation d'un élève"/>
+      </div>
+    </div>
+    <!-- comment ça marche -->
+    <div class="py-10 px-2">
+      <div class="text-pink-600 uppercase font-bold text-xl">Comment ça marche ?</div>
+      <div class="mt-6 flex items-center space-x-2 text-pink-600">
+        <div class="rounded-full border-2 border-pink-600 w-6 h-6 text-center font-bold text-sm">1</div>
+        <div>Des observations en continu</div>
+      </div>
+      <div class="mt-6">
+        Au cours de l'année, toute l'équipe de l'école fait des 
+        <span class="font-bold text-pink-700">observations</span> 🧐
+        : de courtes descriptions associées à un·e/des élève/s et à une/des compétences du socle.
+      </div>
+      <div class="mt-4">
+        <Exemple>
+          <div>
+            Ursule et Marcel font un gâteau au chocolat
+          </div>
+          <div class="mt-2">
+            Élèves :
+            <ul class="list-inside list-disc">
+              <li>Marcel <span class="italic">(Cycle 1)</span></li>
+              <li>Ursule <span class="italic">(Cycle 2)</span></li>
+            </ul>
+          </div>
+          <div class="mt-2 text-pink-700 text-sm">
+            Compétences :
+            <ul class="list-inside list-disc">
+              <li>3.4.16 : Je participe à l’élaboration d’une recette de cuisine <span class="italic">(Cycle 1)</span></li>
+              <li>2.1.5 : Respecter l'espace, les outils et les matériaux partagés <span class="italic">(Cycle 2)</span></li>
+              <li>2.1.9 : Manipuler avec soin <span class="italic">(Cycle 2)</span></li>
+            </ul>
+          </div>
+        </Exemple>
+      </div>
+      <div class="mt-16 flex items-center space-x-2 text-pink-600">
+        <div class="rounded-full border-2 border-pink-600 w-6 h-6 text-center font-bold text-sm">2</div>
+        <div>Les évaluations</div>
+      </div>
+      <div class="mt-8">
+        À la fin d'une période, vous vous réunissez pour une journée particulièrement agréable : les évaluations ! 🤦
+        Pour chaque compétences et pour chaque élèves, vous pouvez commenter et choisir un niveau d'évaluation approprié.
+      </div>
+      <div class="mt-4">
+        <Exemple>
+          <div>
+            Évaluation - 2.1.9. Manipuler avec soin
+          </div>
+          <div>
+            Pour Clémence <span class="italic">(Cycle 1)</span>
+          </div>
+          <div class="mt-2">
+            Très bonne maîtrise
+          </div>
+          <div class="">
+            Clémence fait de la sculpture sur grain de riz, la manipulation avec soin n'a aucun secret pour elle.
+          </div>
+        </Exemple>
+      </div>
+      <div class="mt-16 flex items-center space-x-2 text-pink-600">
+        <div class="rounded-full border-2 border-pink-600 w-6 h-6 text-center font-bold text-sm">3</div>
+        <div>Les rapports en PDF</div>
+      </div>
+      <div class="mt-8">
+        À la fin de la journée, vous cliquez sur <span class="italic">Générer tous les rapports</span>.
+        Ils contiennent un résumé, un tableau d'évaluation, le détail des commentaires et des observations faites pendant le cycle.
+        Vous pouvez alors les imprimer et les présenter à l'inspection ! 	🥳
+      </div>
+    </div>
+    <!-- A quoi ça ressemble -->
+    <div class="py-10 px-2 bg-pink-600 text-white">
+      <div class="uppercase font-bold text-lg">À quoi ça ressemble ?</div>
+      <div class="grid grid-cols-1 gap-y-12 mt-8">
+        <Screenshot img="/screenshots/new-observation-mobile.png" alt="Description d'une observation depuis un PC">
+          Pour commencer une observation, on la décrit :
+        </Screenshot>
+        <Screenshot img="/screenshots/new-observation-mobile.png" alt="Description d'une observation depuis un mobile">
+          Et ça marche aussi sur un mobile ou sur une tablette :
+        </Screenshot>
+        <Screenshot img="/screenshots/observation.png" alt="Enrichissement d'une observation">
+          Sur le moment ou après, il est possible d'enrichir les observations :
+          <ul class="list-disc list-inside">
+            <li>
+              en ajoutant un·e ou des élèves
+            </li>
+            <li>
+              en liant des compétences
+            </li>
+            <li>
+              en évaluant directement ces compétences
+            </li>    
+          </ul>
+        </Screenshot>
+        <Screenshot img="/screenshots/single-eval.png" alt="Évaluation d'une compétence pour un élève">
+          Et voici, une évaluation d'un·e élève pour une compétence avec :
+          <ul class="list-disc list-inside">
+            <li>
+              une possibilité de commenter
+            </li>
+            <li>
+              la sélection d'un niveau de maîtrise
+            </li>
+          </ul>
+        </Screenshot>
+        <Screenshot img="/screenshots/stats-accueil.png" alt="Statistiques générales">
+          Et tout au long de l'année, l'outil vous indique votre progression dans l'évaluation du socle (pour rester motivé·e·s !) :
+          <ul class="list-disc list-inside">
+            <li>
+              un pourcentage de progression général
+            </li>
+            <li>
+              les observations qui ne sont pas encore enrichie
+            </li>
+            <li>
+              une progression par cycle
+            </li>
+            <li>
+              une indication de l'activité sur les 4 dernières semaines
+            </li>
+          </ul>
+        </Screenshot>
+        <Screenshot img="/screenshots/stats-c3.png" alt="Statistiques par cycle">
+          Également, des statistiques avec tous les élèves d'un cycle qui présente :
+          <ul class="list-disc list-inside">
+            <li>
+              les compétences observées ou pas
+            </li>
+            <li>
+              les compétences évaluées et le niveau d'évaluation
+            </li>
+          </ul>
+          À chaque fois que vous observez/évaluez, vous collectez un petit carré de couleurs !
+        </Screenshot>
+        <Screenshot img="/screenshots/stats-student.png" alt="Statistiques par élève">
+          Les statistiques sont aussi disponibles spécifiquement pour un·e élève.
+          Bonus, les petits carrés sont "cliquables" et vous emmène directement là où vous
+          <span class="line-through">pouvez gagner un petit carré de couleur</span>
+          observez/évaluez une compétence !
+        </Screenshot>
+      </div>
+    </div>
+    <div class="py-10 px-2">
+      <div class="text-pink-600 uppercase font-bold text-xl">Et en pratique ?</div>
+      <div class="mt-6">
+        Au cours de l'année, toute l'équipe de l'école fait des 
+        <span class="font-bold text-pink-700">observations</span> 🧐
+        : de courtes descriptions associées à un·e/des élève/s et à une/des compétences du socle.
+      </div>
+    </div>
+  </main>
 </body>
 </html>
