@@ -1,0 +1,11 @@
+---
+const { img, alt } = Astro.props;
+---
+<div>
+  <div>
+    <slot/>
+  </div>
+  <div class="mt-2">
+    <img class="rounded-md shadow-xl" src="{img}" alt="{alt}"/>
+  </div>
+</div>
