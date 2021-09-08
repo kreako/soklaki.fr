@@ -5,6 +5,7 @@ import Exemple from '../components/Exemple.astro';
 import Screenshot from '../components/Screenshot.astro';
 import IconPhone from '../components/IconPhone.astro';
 import IconMail from '../components/IconMail.astro';
+import How from '../components/How.astro';
 // You can import components from any supported Framework here!
 import VueCounter from '../components/VueCounter.vue';
 
@@ -37,188 +38,182 @@ let title = "Soklaki - Évaluation de l'acquisition du socle commun";
       </a>
     </div>
   </header>
-  <main>
+  <main class="flex flex-col">
     <!-- hero -->
-    <div class="bg-pink-600 flex flex-col items-center">
-      <div class="text-white px-2 py-10">
+    <div class="bg-pink-600 flex flex-col items-center md:flex-row md:space-x-4 md:justify-center">
+      <div class="text-white px-2 py-10 md:max-w-sm lg:max-w-md">
         <div>
-          <span class="font-extrabold text-2xl">
-            Une évaluation harmonieuse du socle commun
+          <span class="font-extrabold text-2xl md:text-3xl lg:md-text-5xl">
+            Une évaluation <span class="cursor-help" title="Enfin... le moins pénible possible...">harmonieuse</span> du socle commun
           </span>
-          <!--span>
-            Enfin... le moins pénible possible...
-          </span-->
         </div>
         <div class="mt-4">
-          <span class="font-semibold text-lg">
+          <span class="font-semibold text-lg lg:text-xl">
             Une application web qui vous aide à générer des rapports à présenter à l'inspection
           </span>
         </div>
       </div>
-      <div class="w-4/5 pb-10">
+      <div class="w-4/5 pb-10 md:pt-10 md:w-max md:w-max-sm lg:w-max-md">
         <img class="rounded-md shadow-xl" src="/screenshots/stats-student-hero.png" alt="Statistiques sur la progression de l'évaluation d'un élève"/>
       </div>
     </div>
     <!-- comment ça marche -->
-    <div class="py-10 px-2">
+    <div class="py-10 px-2 md:mx-12 md:max-w-4xl place-self-center">
       <div class="text-pink-600 uppercase font-bold text-xl">Comment ça marche ?</div>
-      <div class="mt-6 flex items-center space-x-2 text-pink-600">
-        <div class="rounded-full border-2 border-pink-600 w-6 h-6 text-center font-bold text-sm">1</div>
-        <div>Des observations en continu</div>
-      </div>
-      <div class="mt-6">
-        Au cours de l'année, toute l'équipe de l'école fait des 
-        <span class="font-bold text-pink-700">observations</span> 🧐
-        : de courtes descriptions associées à un·e/des élève/s et à une/des compétences du socle.
-      </div>
-      <div class="mt-4">
-        <Exemple>
-          <div>
-            Ursule et Marcel font un gâteau au chocolat
+       <div class="mt-6">
+        <How index="1" title="Des observations en continu">
+          <p>
+            Au cours de l'année, toute l'équipe de l'école fait des 
+          <span class="font-bold text-pink-700">observations</span> 🧐
+          : de courtes descriptions associées à un·e/des élève/s et à une/des compétences du socle.
+          </p>
+          <div slot="example">
+            <div>
+              Ursule et Marcel font un gâteau au chocolat
+            </div>
+            <div class="mt-2">
+              Élèves :
+              <ul class="list-inside list-disc">
+                <li>Marcel <span class="italic">(Cycle 1)</span></li>
+                <li>Ursule <span class="italic">(Cycle 2)</span></li>
+              </ul>
+            </div>
+            <div class="mt-2 text-pink-700 text-sm">
+              Compétences :
+              <ul class="list-inside list-disc">
+                <li>3.4.16 : Je participe à l’élaboration d’une recette de cuisine <span class="italic">(Cycle 1)</span></li>
+                <li>2.1.5 : Respecter l'espace, les outils et les matériaux partagés <span class="italic">(Cycle 2)</span></li>
+                <li>2.1.9 : Manipuler avec soin <span class="italic">(Cycle 2)</span></li>
+              </ul>
+            </div>
           </div>
-          <div class="mt-2">
-            Élèves :
-            <ul class="list-inside list-disc">
-              <li>Marcel <span class="italic">(Cycle 1)</span></li>
-              <li>Ursule <span class="italic">(Cycle 2)</span></li>
-            </ul>
-          </div>
-          <div class="mt-2 text-pink-700 text-sm">
-            Compétences :
-            <ul class="list-inside list-disc">
-              <li>3.4.16 : Je participe à l’élaboration d’une recette de cuisine <span class="italic">(Cycle 1)</span></li>
-              <li>2.1.5 : Respecter l'espace, les outils et les matériaux partagés <span class="italic">(Cycle 2)</span></li>
-              <li>2.1.9 : Manipuler avec soin <span class="italic">(Cycle 2)</span></li>
-            </ul>
-          </div>
-        </Exemple>
+        </How>
       </div>
-      <div class="mt-16 flex items-center space-x-2 text-pink-600">
-        <div class="rounded-full border-2 border-pink-600 w-6 h-6 text-center font-bold text-sm">2</div>
-        <div>Les évaluations</div>
-      </div>
-      <div class="mt-8">
-        À la fin d'une période, vous vous réunissez pour une journée particulièrement agréable : les évaluations ! 🤦
-        Pour chaque compétences et pour chaque élèves, vous pouvez commenter et choisir un niveau d'évaluation approprié.
-      </div>
-      <div class="mt-4">
-        <Exemple>
-          <div>
-            Évaluation - 2.1.9. Manipuler avec soin
+      <div class="mt-16">
+        <How index="2" title="Les évaluations">
+          <p>
+            À la fin d'une période, vous vous réunissez pour une journée particulièrement agréable : les évaluations ! 🤦
+            Pour chaque compétences et pour chaque élèves, vous pouvez commenter et choisir un niveau d'évaluation approprié.
+          </p>
+          <div slot="example">
+            <div>
+              Évaluation - 2.1.9. Manipuler avec soin
+            </div>
+            <div>
+              Pour Clémence <span class="italic">(Cycle 1)</span>
+            </div>
+            <div class="mt-2">
+              Très bonne maîtrise
+            </div>
+            <div class="">
+              Clémence fait de la sculpture sur grain de riz, la manipulation avec soin n'a aucun secret pour elle.
+            </div>
           </div>
-          <div>
-            Pour Clémence <span class="italic">(Cycle 1)</span>
-          </div>
-          <div class="mt-2">
-            Très bonne maîtrise
-          </div>
-          <div class="">
-            Clémence fait de la sculpture sur grain de riz, la manipulation avec soin n'a aucun secret pour elle.
-          </div>
-        </Exemple>
+        </How>
       </div>
-      <div class="mt-16 flex items-center space-x-2 text-pink-600">
-        <div class="rounded-full border-2 border-pink-600 w-6 h-6 text-center font-bold text-sm">3</div>
-        <div>Les rapports en PDF</div>
-      </div>
-      <div class="mt-8">
-        À la fin de la journée, vous cliquez sur <span class="italic">Générer tous les rapports</span>.
-        Ils contiennent un résumé, un tableau d'évaluation, le détail des commentaires et des observations faites pendant le cycle.
-        Vous pouvez alors les imprimer et les présenter à l'inspection ! 	🥳
-      </div>
-      <div class="mt-4">
-        <Exemple>
-          <div class="flex items-center space-x-2">
-            <img class="rounded-md shadow-xl w-1/2" src="/screenshots/report-1.png" alt="Première page d'un rapport d'évaluation du socle"/>
-            <img class="rounded-md shadow-xl w-1/2" src="/screenshots/report-2.png" alt="Première page d'un rapport d'évaluation du socle"/>
+      <div class="mt-16 mb-8">
+        <How index="3" title="Les rapports en PDF">
+          <p>
+            À la fin de la journée, vous cliquez sur <span class="italic">Générer tous les rapports</span>.
+            Ils contiennent un résumé, un tableau d'évaluation, le détail des commentaires et des observations faites pendant le cycle.
+            Vous pouvez alors les imprimer et les présenter à l'inspection ! 	🥳
+          </p>
+          <div slot="example">
+            <div class="flex items-center space-x-2">
+              <img class="rounded-md shadow-xl w-1/2" src="/screenshots/report-1.png" alt="Première page d'un rapport d'évaluation du socle"/>
+              <img class="rounded-md shadow-xl w-1/2" src="/screenshots/report-2.png" alt="Première page d'un rapport d'évaluation du socle"/>
+            </div>
           </div>
-        </Exemple>
+        </How>
       </div>
     </div>
+
     <!-- A quoi ça ressemble -->
-    <div class="py-10 px-2 bg-pink-600 text-white">
-      <div class="uppercase font-bold text-lg">À quoi ça ressemble ?</div>
-      <div class="grid grid-cols-1 gap-y-12 mt-8">
-        <Screenshot img="/screenshots/new-observation-mobile.png" alt="Description d'une observation depuis un PC">
-          Pour commencer une observation, on la décrit :
-        </Screenshot>
-        <Screenshot img="/screenshots/new-observation-mobile.png" alt="Description d'une observation depuis un mobile">
-          Et ça marche aussi sur un mobile ou sur une tablette :
-        </Screenshot>
-        <Screenshot img="/screenshots/observation.png" alt="Enrichissement d'une observation">
-          Sur le moment ou après, il est possible d'enrichir les observations :
-          <ul class="list-disc list-inside">
-            <li>
-              en ajoutant un·e ou des élèves
-            </li>
-            <li>
-              en liant des compétences
-            </li>
-            <li>
-              en évaluant directement ces compétences
-            </li>    
-          </ul>
-        </Screenshot>
-        <Screenshot img="/screenshots/single-eval.png" alt="Évaluation d'une compétence pour un élève">
-          Et voici, une évaluation d'un·e élève pour une compétence avec :
-          <ul class="list-disc list-inside">
-            <li>
-              une possibilité de commenter
-            </li>
-            <li>
-              la sélection d'un niveau de maîtrise
-            </li>
-          </ul>
-        </Screenshot>
-        <Screenshot img="/screenshots/stats-accueil.png" alt="Statistiques générales">
-          Et tout au long de l'année, l'outil vous indique votre progression dans l'évaluation du socle (pour rester motivé·e·s !) :
-          <ul class="list-disc list-inside">
-            <li>
-              un pourcentage de progression général
-            </li>
-            <li>
-              les observations qui ne sont pas encore enrichie
-            </li>
-            <li>
-              une progression par cycle
-            </li>
-            <li>
-              une indication de l'activité sur les 4 dernières semaines
-            </li>
-          </ul>
-        </Screenshot>
-        <Screenshot img="/screenshots/stats-c3.png" alt="Statistiques par cycle">
-          Également, des statistiques avec tous les élèves d'un cycle qui présente :
-          <ul class="list-disc list-inside">
-            <li>
-              les compétences observées ou pas
-            </li>
-            <li>
-              les compétences évaluées et le niveau d'évaluation
-            </li>
-          </ul>
-          À chaque fois que vous observez/évaluez, vous collectez un petit carré de couleurs !
-        </Screenshot>
-        <Screenshot img="/screenshots/stats-student.png" alt="Statistiques par élève">
-          Les statistiques sont aussi disponibles spécifiquement pour un·e élève.
-          Bonus, les petits carrés sont "cliquables" et vous emmène directement là où vous
-          <span class="line-through">pouvez gagner un petit carré de couleur</span>
-          observez/évaluez une compétence !
-        </Screenshot>
+    <div class="py-10 px-2 bg-pink-600 text-white flex flex-col">
+    <div class="place-self-center">
+      <div class="uppercase font-bold text-lg lg:text-xl">À quoi ça ressemble ?</div>
+        <div class="grid grid-cols-1 gap-y-12 mt-8 md:grid-cols-2 md:gap-8 lg:gap-20">
+          <Screenshot img="/screenshots/new-observation-mobile.png" alt="Description d'une observation depuis un PC">
+            Pour commencer une observation, on la décrit, juste du texte.
+          </Screenshot>
+          <Screenshot img="/screenshots/new-observation-mobile.png" alt="Description d'une observation depuis un mobile">
+            Et ça marche aussi sur un mobile ou sur une tablette :
+          </Screenshot>
+          <Screenshot img="/screenshots/observation.png" alt="Enrichissement d'une observation">
+            Sur le moment ou après, il est possible d'enrichir les observations :
+            <ul class="list-disc list-inside">
+              <li>
+                en ajoutant un·e ou des élèves
+              </li>
+              <li>
+                en liant des compétences
+              </li>
+              <li>
+                en évaluant directement ces compétences
+              </li>    
+            </ul>
+          </Screenshot>
+          <Screenshot img="/screenshots/single-eval.png" alt="Évaluation d'une compétence pour un élève">
+            Et voici, une évaluation d'un·e élève pour une compétence avec :
+            <ul class="list-disc list-inside">
+              <li>
+                une possibilité de commenter
+              </li>
+              <li>
+                la sélection d'un niveau de maîtrise
+              </li>
+            </ul>
+          </Screenshot>
+          <Screenshot img="/screenshots/stats-accueil.png" alt="Statistiques générales">
+            Et tout au long de l'année, l'outil vous indique votre progression dans l'évaluation du socle (pour rester motivé·e·s !) :
+            <ul class="list-disc list-inside">
+              <li>
+                un pourcentage de progression général
+              </li>
+              <li>
+                les observations qui ne sont pas encore enrichies
+              </li>
+              <li>
+                une progression par cycle
+              </li>
+              <li>
+                une indication de l'activité sur les 4 dernières semaines
+              </li>
+            </ul>
+          </Screenshot>
+          <Screenshot img="/screenshots/stats-c3.png" alt="Statistiques par cycle">
+            Également, des statistiques avec tous les élèves d'un cycle qui présente :
+            <ul class="list-disc list-inside">
+              <li>
+                les compétences observées ou pas
+              </li>
+              <li>
+                les compétences évaluées et le niveau d'évaluation
+              </li>
+            </ul>
+            À chaque fois que vous observez/évaluez, vous collectez un petit carré de couleurs !
+          </Screenshot>
+          <Screenshot img="/screenshots/stats-student.png" alt="Statistiques par élève">
+            Les statistiques sont aussi disponibles spécifiquement pour un·e élève.
+            Bonus, les petits carrés sont "cliquables" et vous emmène directement là où vous
+            <span class="line-through">pouvez gagner un petit carré de couleur</span>
+            observez/évaluez une compétence !
+          </Screenshot>
+        </div>
       </div>
     </div>
-    <div class="py-10 px-2">
+    <div class="py-10 px-2 place-self-center">
       <div class="text-pink-600 uppercase font-bold text-xl">Et en pratique ?</div>
       <div class="mt-6">
-        Pour commencer à utiliser soklaki, j'aurai besoin que vous me <a class="text-blue-500" href="#contact">communiquiez</a> :
+        Pour que vous puissiez tester soklaki, j'aurai besoin que vous me <a class="text-blue-500" href="#contact">communiquiez</a> :
         <ul class="list-disc list-inside">
           <li>
             le nom de votre école
           </li>
           <li>
             la liste de vos élèves (nom, prénom, date d'anniversaire, date d'entrée à l'école)
-            <span class="text-sm ml-2">
-              parce que commencer par remplir tout ça à la main, c'est pas très réjouissant !
+            <span class="text-sm ml-2 text-gray-400">
+              (parce que commencer par remplir tout ça à la main, c'est pas très réjouissant !)
             </span>
           </li>
         </ul>
@@ -228,8 +223,10 @@ let title = "Soklaki - Évaluation de l'acquisition du socle commun";
       </div>
       <div class="mt-6">
         Pour m'aider à payer les frais de serveurs, les crêpes qui me nourrissent et le temps que j'y passe,
-        je vous demandrai une participation financière.
-        Un prix juste pour moi serait 35€/mois ou 350€/an.
+        je vous demanderai une participation financière.
+      </div>
+      <div class="mt-2">
+        Après une période d'essai d'un mois, le prix sera de 35€/mois ou 400€/an.
       </div>
       <div class="mt-6">
         Soklaki est un logiciel libre, les sources sont disponibles sur
@@ -240,33 +237,35 @@ let title = "Soklaki - Évaluation de l'acquisition du socle commun";
         (Les scripts ansible de déploiement sont disponibles dans le repository).
       </div>
     </div>
-    <div class="py-10 px-2 bg-pink-600 text-white">
-      <div class="uppercase font-bold text-lg" id="contact">Contact</div>
-      <div class="grid grid-cols-1 gap-y-12 mt-8">
-        <div class="mt-4">
-          <div class="flex items-center space-x-2">
-            <IconPhone/>
-            <p class="text-lg">
-              Par Téléphone :
-              <a class="font-bold text-teal-500" href="tel:+33698990069">
-                +33 6 98 99 00 69
-              </a>
-            </p>
+    <div class="py-10 px-2 bg-pink-600 text-white flex flex-col">
+      <div class="place-self-center md:mr-48 lg:mr-96">
+        <div class="uppercase font-bold text-lg md:text-3xl lg:text-2xl" id="contact">Contact</div>
+        <div class="grid grid-cols-1 gap-y-12 mt-8">
+          <div class="mt-4">
+            <div class="flex items-center space-x-2">
+              <IconPhone/>
+              <p class="text-lg md:text-xl">
+                Par Téléphone :
+                <a class="font-bold text-teal-500" href="tel:+33698990069">
+                  +33 6 98 99 00 69
+                </a>
+              </p>
+            </div>
+            <p class="md:text-lg">(Appel, sms, Telegram, Signal, Whatsapp...)</p>
           </div>
-          <p>(Appel, sms, Telegram, Signal, Whatsapp...)</p>
-        </div>
-        <div class="mt-4">
-          <div class="flex items-center space-x-2">
-            <IconMail class="h-4 text-gray-700" />
-            <p class="text-lg">
-              Par mail :
-              <a class="font-bold text-teal-500" href="mailto:olivier@soklaki.fr">
-                olivier@soklaki.fr
-              </a>
-            </p>
+          <div class="mt-4">
+            <div class="flex items-center space-x-2">
+              <IconMail class="h-4 text-gray-700" />
+              <p class="text-lg md:text-xl">
+                Par mail :
+                <a class="font-bold text-teal-500" href="mailto:olivier@soklaki.fr">
+                  olivier@soklaki.fr
+                </a>
+              </p>
+            </div>
           </div>
+          <div class="mt-4 md:text-lg">À tout bientôt ! 🤸</div>
         </div>
-        <div class="mt-4">À tout bientôt ! 🤸</div>
       </div>
     </div>
   </main>
