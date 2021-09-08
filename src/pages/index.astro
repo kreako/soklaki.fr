@@ -40,21 +40,27 @@ let title = "Soklaki - Évaluation de l'acquisition du socle commun";
   </header>
   <main class="flex flex-col">
     <!-- hero -->
-    <div class="bg-pink-600 flex flex-col items-center md:flex-row md:space-x-4 md:justify-center">
-      <div class="text-white px-2 py-10 md:max-w-sm lg:max-w-md">
-        <div>
-          <span class="font-extrabold text-2xl md:text-3xl lg:md-text-5xl">
-            Une évaluation <span class="cursor-help" title="Enfin... le moins pénible possible...">harmonieuse</span> du socle commun
-          </span>
+    <div class="bg-pink-600 grid grid-cols-1 py-10 px-2 items-center">
+      <div class="flex flex-col items-center md:flex-row md:space-x-4 md:justify-center">
+        <div class="text-white md:max-w-sm lg:max-w-md">
+          <div>
+            <span class="font-extrabold text-2xl md:text-3xl lg:md-text-5xl">
+              Une évaluation harmonieuse<span class="text-pink-200">*</span> du socle commun
+            </span>
+          </div>
+          <div class="mt-4">
+            <span class="font-semibold text-lg lg:text-xl">
+              Une application web qui vous aide à générer des rapports à présenter à l'inspection
+            </span>
+          </div>
+
         </div>
-        <div class="mt-4">
-          <span class="font-semibold text-lg lg:text-xl">
-            Une application web qui vous aide à générer des rapports à présenter à l'inspection
-          </span>
+        <div class="w-4/5 py-10 md:pt-10 md:w-max md:w-max-sm lg:w-max-md">
+          <img class="rounded-md shadow-xl" src="/screenshots/stats-student-hero.png" alt="Statistiques sur la progression de l'évaluation d'un élève"/>
         </div>
       </div>
-      <div class="w-4/5 pb-10 md:pt-10 md:w-max md:w-max-sm lg:w-max-md">
-        <img class="rounded-md shadow-xl" src="/screenshots/stats-student-hero.png" alt="Statistiques sur la progression de l'évaluation d'un élève"/>
+      <div class="mt-4 text-pink-200 place-self-end md:mr-10">
+        * Enfin... la moins pénible possible !
       </div>
     </div>
     <!-- comment ça marche -->
