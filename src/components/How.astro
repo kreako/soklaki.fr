@@ -1,0 +1,20 @@
+---
+import Exemple from '../components/Exemple.astro';
+
+const { index, title } = Astro.props;
+---
+ 
+ <div class="flex items-center space-x-2 text-pink-600">
+  <div class="rounded-full border-2 border-pink-600 w-6 h-6 text-center font-bold text-sm">{index}</div>
+  <div>{title}</div>
+</div>
+<div class="mt-6 flex flex-col space-y-4 md:flex-row md:space-x-8 md:items-center">
+  <div class="md:max-w-sm md:text-lg lg:max-w-md">
+    <slot/>
+  </div>
+  <div class="md:min-w-min">
+    <Exemple>
+      <slot name="example"/>
+    </Exemple>
+  </div>
+</div>
