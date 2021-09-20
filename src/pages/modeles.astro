@@ -1,0 +1,33 @@
+---
+import TemplateDownload from '../components/TemplateDownload.astro'
+import BaseLayout from '../layouts/BaseLayout.astro'
+---
+
+<BaseLayout title="Modèles de rapport">
+  <div class="flex flex-col">
+    <div class="py-10 px-2 md:mx-12 md:max-w-4xl place-self-center">
+      <div class="text-pink-600 uppercase tracking-wide font-bold text-xl">Des modèles à imprimer</div>
+      <div class="mt-4">
+        Voici 4 modèles de rapport d'évaluation du socle commun à imprimer.
+      </div>
+      <div class="text-gray-600 text-sm">
+        Une version papier et allégée de soklaki !
+      </div>
+      <div class="grid grid-cols-1 mt-16 gap-4 px-4 lg:grid-cols-2 lg:gap-8">
+        <TemplateDownload cycle="1"/>
+        <TemplateDownload cycle="2"/>
+        <TemplateDownload cycle="3"/>
+        <TemplateDownload cycle="4"/>
+      </div>
+      <div class="mt-16">
+        La dernière page est une notice qui explique brièvement comment utiliser le modèle.
+      </div>
+      <div class="text-gray-600 text-sm">
+        Pas besoin de l'imprimer !
+      </div>
+      <div class="mt-8 mb-8 text-sm text-gray-600">
+        Ces modèles ont été générés à partir des données de soklaki. Elles ont été préparées en très grande partie par l'équipe de l'école démocratique du Tarn !
+      </div>
+    </div>
+  </div>
+</BaseLayout>
