@@ -3,7 +3,7 @@ const { cycle } = Astro.props;
 import IconDocument from '../components/IconDocument.astro'
 ---
  
-<a href={`/templates/soklaki_modele_c${cycle}.pdf`} class="py-4 px-2 bg-pink-100 hover:text-white hover:bg-pink-600 hover:font-bold flex flex-col items-center">
+<a href={`/templates/soklaki_modele_c${cycle}.pdf`} target="_blank" class="py-4 px-2 bg-pink-100 hover:text-white hover:bg-pink-600 hover:font-bold flex flex-col items-center">
   <div class="flex space-x-2 items-center">
     <div>
       Cycle {cycle}
