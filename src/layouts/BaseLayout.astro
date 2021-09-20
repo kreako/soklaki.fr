@@ -1,0 +1,70 @@
+---
+const {title} = Astro.props;
+
+import IconPhone from '../components/IconPhone.astro';
+import IconMail from '../components/IconMail.astro';
+import Mascotte from '../components/Mascotte.astro';
+
+---
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>{title} - soklaki.fr</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="stylesheet" href={Astro.resolve("../styles/global.css")}>
+</head>
+<body>
+  <header class="flex flex-row items-center space-x-2 my-2">
+    <a href="/" class="flex-grow-0">
+      <div class="rounded-full h-10 w-10 bg-white flex flex-row justify-center p-1">
+        <Mascotte class="h-8" />
+      </div>
+    </a>
+    <a href="/" class="flex-grow">
+      <div class="font-bold text-pink-600">Soklaki</div>
+    </a>
+    <div class="flex-grow-0 px-2 text-pink-600 md:pr-4">
+      <a href="#contact">
+        Contact
+      </a>
+    </div>
+  </header>
+  <main>
+    <slot/>
+  </main>
+  <footer>
+    <div class="py-10 px-2 bg-pink-600 text-white flex flex-col">
+      <div class="place-self-center md:mr-48 lg:mr-96">
+        <div class="uppercase font-bold text-lg md:text-3xl lg:text-2xl" id="contact">Contact</div>
+        <div class="grid grid-cols-1 gap-y-12 mt-8">
+          <div class="mt-4">
+            <div class="flex items-center space-x-2">
+              <IconPhone/>
+              <p class="text-lg md:text-xl">
+                Par Téléphone :
+                <a class="font-bold text-teal-500" href="tel:+33698990069">
+                  +33 6 98 99 00 69
+                </a>
+              </p>
+            </div>
+            <p class="md:text-lg">(Appel, sms, Telegram, Signal, Whatsapp...)</p>
+          </div>
+          <div class="mt-4">
+            <div class="flex items-center space-x-2">
+              <IconMail class="h-4 text-gray-700" />
+              <p class="text-lg md:text-xl">
+                Par mail :
+                <a class="font-bold text-teal-500" href="mailto:olivier@soklaki.fr">
+                  olivier@soklaki.fr
+                </a>
+              </p>
+            </div>
+          </div>
+          <div class="mt-4 md:text-lg">À tout bientôt ! 🤸</div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
